@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability | LabBook</title>
+    <link rel="stylesheet" href="availability.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html" aria-current="page">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Availability</h1>
+            <p>Select an equipment and a date to see which time slots are free. Equipment under maintenance is blocked and cannot be booked.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Check a Date</h2>
+            <form class="form" id="availability-form" action="#" method="get">
+                <p class="form-row">
+                    <label for="equipment">Equipment</label>
+                    <select id="equipment" name="equipment" required>
+                        <option value="">Select equipment</option>
+                        <option value="EQ03">Oscilloscope C</option>
+                        <option value="EQ04">Digital Multimeter Set</option>
+                        <option value="EQ05">Spectrophotometer E</option>
+                        <option value="EQ06">3D Printer D</option>
+                    </select>
+                </p>
+                <p class="form-row">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Check Availability">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Time Slots</h2>
+            <p id="slot-caption">Sample result: Oscilloscope C on 2026-10-05</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Time Slot</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="slot-body">
+                    <tr>
+                        <td>09:00 - 11:00</td>
+                        <td class="status-cell status-good">Free</td>
+                        <td><a href="book.html">Book this slot</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 13:00</td>
+                        <td class="status-cell status-booked">Booked</td>
+                        <td>Not available</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 16:00</td>
+                        <td class="status-cell status-good">Free</td>
+                        <td><a href="book.html">Book this slot</a></td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 18:00</td>
+                        <td class="status-cell status-wait">Pending Approval</td>
+                        <td>Not available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section list-section">
+            <h2>What the Status Means</h2>
+            <ul class="info-list">
+                <li><strong>Free</strong> - you can send a booking request.</li>
+                <li><strong>Booked</strong> - already approved for someone else.</li>
+                <li><strong>Pending Approval</strong> - a request is waiting for approval and the slot is held.</li>
+                <li><strong>Blocked</strong> - the equipment is under <a href="maintenance.html">maintenance</a>.</li>
+            </ul>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="equipment.html">Equipment</a> - Browse the full equipment catalogue</li>
+                <li><a href="book.html">Book Equipment</a> - Request the slot you have picked</li>
+                <li><a href="maintenance.html">Maintenance</a> - Find out why some equipment is blocked</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="availability.js"></script>
+</body>
+</html>

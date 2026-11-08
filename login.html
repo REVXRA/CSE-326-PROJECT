@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | LabBook</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" aria-current="page">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Login</h1>
+            <p>Welcome to LabBook! Please enter your credentials to access your account.</p>
+            <p>Don't have an account? Ask your lab administrator to register you.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Login Form</h2>
+            <form class="form" id="login-form" action="#" method="post">
+                <fieldset class="form-group">
+                    <legend>Login / Sign-In as</legend>
+                    <p class="form-row">
+                        <input type="radio" id="student" name="usertype" value="student" required>
+                        <label for="student">Student</label>
+                    </p>
+                    <p class="form-row">
+                        <input type="radio" id="faculty" name="usertype" value="faculty" required>
+                        <label for="faculty">Faculty</label>
+                    </p>
+                    <p class="form-row">
+                        <input type="radio" id="admin" name="usertype" value="admin" required>
+                        <label for="admin">Admin</label>
+                    </p>
+                    <p class="form-row">
+                        <input type="radio" id="lab-staff" name="usertype" value="lab-staff" required>
+                        <label for="lab-staff">Lab Instructor / Technician</label>
+                    </p>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Your Details</legend>
+                    <p class="form-row">
+                        <label for="reg-no">Registration ID</label>
+                        <input type="text" id="reg-no" name="UID" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="pass" required>
+                    </p>
+                    <p class="form-row">
+                        <input type="checkbox" id="show-password">
+                        <label for="show-password">Show Password</label>
+                    </p>
+                    <p class="form-row">
+                        <input type="checkbox" id="remember-me" name="remember">
+                        <label for="remember-me">Remember Me</label>
+                    </p>
+                </fieldset>
+                <p class="form-actions">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="about.html">About</a> - New to LabBook? Read about the project</li>
+                <li><a href="equipment.html">Equipment</a> - Browse the equipment without logging in</li>
+                <li><a href="index.html">Home</a> - Go back to the home page</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

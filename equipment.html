@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment | LabBook</title>
+    <link rel="stylesheet" href="equipment.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html" aria-current="page">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Equipment Catalogue</h1>
+            <p>Browse all shared lab equipment. Each item shows its lab, category, quantity and current status.</p>
+            <p>Found something you need? Check the <a href="availability.html">free time slots</a> or go straight to <a href="book.html">booking</a>.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Search and Filter</h2>
+            <form class="form" id="filter-form" action="#" method="get">
+                <p class="form-row">
+                    <label for="search">Equipment Name</label>
+                    <input type="text" id="search" name="search">
+                </p>
+                <p class="form-row">
+                    <label for="lab">Lab</label>
+                    <select id="lab" name="lab">
+                        <option value="">All Labs</option>
+                        <option value="biology">Biology Lab</option>
+                        <option value="chemistry">Chemistry Lab</option>
+                        <option value="electronics">Electronics Lab</option>
+                        <option value="workshop">Workshop</option>
+                    </select>
+                </p>
+                <p class="form-row">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="">All Categories</option>
+                        <option value="optical">Optical Instruments</option>
+                        <option value="laboratory">Laboratory Equipment</option>
+                        <option value="electronic">Electronic Instruments</option>
+                        <option value="fabrication">Fabrication Tools</option>
+                    </select>
+                </p>
+                <p class="form-row">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="">Any Status</option>
+                        <option value="available">Available</option>
+                        <option value="maintenance">Under Maintenance</option>
+                    </select>
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Search">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>All Equipment</h2>
+            <p id="result-count" role="status" aria-live="polite"></p>
+            <table class="data-table" id="equipment-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Equipment Name</th>
+                        <th>Lab</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EQ01</td>
+                        <td>Microscope A</td>
+                        <td>Biology Lab</td>
+                        <td>Optical Instruments</td>
+                        <td>1</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td><a href="maintenance.html">See Maintenance</a></td>
+                    </tr>
+                    <tr>
+                        <td>EQ02</td>
+                        <td>Centrifuge B</td>
+                        <td>Chemistry Lab</td>
+                        <td>Laboratory Equipment</td>
+                        <td>1</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td><a href="maintenance.html">See Maintenance</a></td>
+                    </tr>
+                    <tr>
+                        <td>EQ03</td>
+                        <td>Oscilloscope C</td>
+                        <td>Electronics Lab</td>
+                        <td>Electronic Instruments</td>
+                        <td>4</td>
+                        <td class="status-cell status-good">Available</td>
+                        <td><a href="book.html">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>EQ04</td>
+                        <td>Digital Multimeter Set</td>
+                        <td>Electronics Lab</td>
+                        <td>Electronic Instruments</td>
+                        <td>10</td>
+                        <td class="status-cell status-good">Available</td>
+                        <td><a href="book.html">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>EQ05</td>
+                        <td>Spectrophotometer E</td>
+                        <td>Chemistry Lab</td>
+                        <td>Laboratory Equipment</td>
+                        <td>2</td>
+                        <td class="status-cell status-good">Available</td>
+                        <td><a href="book.html">Book</a></td>
+                    </tr>
+                    <tr>
+                        <td>EQ06</td>
+                        <td>3D Printer D</td>
+                        <td>Workshop</td>
+                        <td>Fabrication Tools</td>
+                        <td>1</td>
+                        <td class="status-cell status-good">Available</td>
+                        <td><a href="book.html">Book</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="availability.html">Availability</a> - Check the free and booked slots of any equipment</li>
+                <li><a href="book.html">Book Equipment</a> - Send a booking request for available equipment</li>
+                <li><a href="maintenance.html">Maintenance</a> - See which equipment is blocked for repair or calibration</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="equipment.js"></script>
+</body>
+</html>

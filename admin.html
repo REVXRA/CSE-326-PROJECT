@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | LabBook</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html" aria-current="page">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Admin Dashboard</h1>
+            <p>Manage equipment and users, watch pending requests and view utilisation reports.</p>
+            <p>This page is for administrators only. Please <a href="login.html">log in</a> as Admin to continue.</p>
+        </section>
+
+        <section class="content-section list-section">
+            <h2>Overview</h2>
+            <ul class="info-list">
+                <li>Total equipment: <span id="stat-total">6</span></li>
+                <li>Under maintenance: <span id="stat-maintenance">2</span> (<a href="maintenance.html">view</a>)</li>
+                <li>Pending requests: <span id="stat-pending">2</span> (<a href="approvals.html">review</a>)</li>
+                <li>Active bookings this week: 3</li>
+            </ul>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Add Equipment</h2>
+            <form class="form" id="equipment-form" action="#" method="post">
+                <fieldset class="form-group">
+                    <legend>New Equipment</legend>
+                    <p class="form-row">
+                        <label for="eq-name">Equipment Name</label>
+                        <input type="text" id="eq-name" name="name" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="eq-lab">Lab</label>
+                        <input type="text" id="eq-lab" name="lab" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="eq-category">Category</label>
+                        <input type="text" id="eq-category" name="category" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="eq-quantity">Quantity</label>
+                        <input type="number" id="eq-quantity" name="quantity" min="1" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="eq-status">Status</label>
+                        <select id="eq-status" name="status">
+                            <option value="available">Available</option>
+                            <option value="maintenance">Under Maintenance</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <p class="form-actions">
+                    <input type="submit" value="Add Equipment">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Current Equipment</h2>
+            <table class="data-table" id="equipment-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Equipment Name</th>
+                        <th>Lab</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EQ01</td>
+                        <td>Microscope A</td>
+                        <td>Biology Lab</td>
+                        <td>1</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td><button type="button" data-action="edit">Edit</button> <button type="button" data-action="remove">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>EQ03</td>
+                        <td>Oscilloscope C</td>
+                        <td>Electronics Lab</td>
+                        <td>4</td>
+                        <td class="status-cell status-good">Available</td>
+                        <td><button type="button" data-action="edit">Edit</button> <button type="button" data-action="remove">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>See the <a href="equipment.html">full equipment catalogue</a>.</p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Manage Users</h2>
+            <table class="data-table" id="users-table">
+                <thead>
+                    <tr>
+                        <th>Registration ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>REG001</td>
+                        <td>Student A</td>
+                        <td>Student</td>
+                        <td class="status-cell status-good">Active</td>
+                        <td><button type="button" data-action="toggle-user">Deactivate</button></td>
+                    </tr>
+                    <tr>
+                        <td>FAC001</td>
+                        <td>Faculty A</td>
+                        <td>Faculty</td>
+                        <td class="status-cell status-good">Active</td>
+                        <td><button type="button" data-action="toggle-user">Deactivate</button></td>
+                    </tr>
+                    <tr>
+                        <td>LAB001</td>
+                        <td>Technician A</td>
+                        <td>Lab Instructor / Technician</td>
+                        <td class="status-cell status-good">Active</td>
+                        <td><button type="button" data-action="toggle-user">Deactivate</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Utilisation Report</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Equipment</th>
+                        <th>Total Bookings</th>
+                        <th>Hours Used</th>
+                        <th>Utilisation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oscilloscope C</td>
+                        <td>12</td>
+                        <td>24</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td>Spectrophotometer E</td>
+                        <td>8</td>
+                        <td>16</td>
+                        <td>40%</td>
+                    </tr>
+                    <tr>
+                        <td>3D Printer D</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>35%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="approvals.html">Approvals</a> - Review pending booking requests</li>
+                <li><a href="maintenance.html">Maintenance</a> - Block or release equipment for maintenance</li>
+                <li><a href="equipment.html">Equipment</a> - See the equipment catalogue as students see it</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="admin.js"></script>
+</body>
+</html>

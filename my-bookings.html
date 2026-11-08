@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings | LabBook</title>
+    <link rel="stylesheet" href="my-bookings.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html" aria-current="page">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>My Bookings</h1>
+            <p>See all the requests you have made and their current status. Log in to see your own bookings.</p>
+            <p>Need another slot? <a href="book.html">Make a new booking request</a>.</p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Current Requests</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Equipment</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-body">
+                    <tr>
+                        <td>BK101</td>
+                        <td>Oscilloscope C</td>
+                        <td>2026-10-05</td>
+                        <td>09:00 - 11:00</td>
+                        <td class="status-cell status-good">Approved</td>
+                        <td>Approved for lab experiment</td>
+                        <td><button type="button" data-action="cancel">Cancel</button></td>
+                    </tr>
+                    <tr>
+                        <td>BK102</td>
+                        <td>Spectrophotometer E</td>
+                        <td>2026-10-07</td>
+                        <td>14:00 - 16:00</td>
+                        <td class="status-cell status-wait">Pending</td>
+                        <td>Waiting for approval</td>
+                        <td><button type="button" data-action="cancel">Cancel</button></td>
+                    </tr>
+                    <tr>
+                        <td>BK103</td>
+                        <td>3D Printer D</td>
+                        <td>2026-10-09</td>
+                        <td>10:00 - 12:00</td>
+                        <td class="status-cell status-bad">Rejected</td>
+                        <td>Slot needed for a class demo</td>
+                        <td><a href="book.html">Book Again</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section list-section">
+            <h2>Request Status</h2>
+            <ul class="info-list">
+                <li><strong>Pending</strong> - waiting for the faculty or lab in-charge.</li>
+                <li><strong>Approved</strong> - you can use the equipment at the booked time.</li>
+                <li><strong>Rejected</strong> - see the remarks and send a new request if needed.</li>
+            </ul>
+            <p>You will get an alert for every change on the <a href="notifications.html">notifications page</a>.</p>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="book.html">Book Equipment</a> - Send a new booking request</li>
+                <li><a href="history.html">Usage History</a> - See your past and completed bookings</li>
+                <li><a href="notifications.html">Notifications</a> - Read alerts about your requests</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="my-bookings.js"></script>
+</body>
+</html>

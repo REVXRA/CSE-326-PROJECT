@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | LabBook</title>
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html" aria-current="page">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Notifications</h1>
+            <p>Alerts about approvals, rejections, reminders and maintenance changes appear here. Log in to see your own alerts.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Filter Alerts</h2>
+            <form class="form" id="filter-form" action="#" method="get">
+                <p class="form-row">
+                    <label for="type">Alert Type</label>
+                    <select id="type" name="type">
+                        <option value="">All Alerts</option>
+                        <option value="approval">Approval</option>
+                        <option value="rejection">Rejection</option>
+                        <option value="reminder">Reminder</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Show">
+                </p>
+            </form>
+        </section>
+
+        <section class="content-section list-section">
+            <h2>Latest Alerts</h2>
+            <p id="unread-count" role="status" aria-live="polite"></p>
+            <ul class="alert-list" id="alert-list">
+                <li><strong>Reminder</strong> (2026-10-04) - Your booking BK101 for Oscilloscope C is tomorrow at 09:00.</li>
+                <li><strong>Approval</strong> (2026-10-01) - Your booking BK101 was approved.</li>
+                <li><strong>Maintenance</strong> (2026-10-01) - Microscope A is under maintenance and blocked for booking.</li>
+                <li><strong>Rejection</strong> (2026-09-30) - Your booking BK103 was rejected. See the remarks in <a href="my-bookings.html">My Bookings</a>.</li>
+            </ul>
+            <form class="form" id="read-form" action="#" method="post">
+                <p class="form-actions">
+                    <input type="submit" value="Mark All as Read">
+                </p>
+            </form>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="my-bookings.html">My Bookings</a> - Check the full status of your requests</li>
+                <li><a href="approvals.html">Approvals</a> - Staff can review pending requests</li>
+                <li><a href="maintenance.html">Maintenance</a> - See which equipment is under maintenance</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="notifications.js"></script>
+</body>
+</html>

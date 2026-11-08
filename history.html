@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage History | LabBook</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html" aria-current="page">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Usage History</h1>
+            <p>Every completed, cancelled or missed booking is saved here. Use the filters to find a past booking.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Filter History</h2>
+            <form class="form" id="history-form" action="#" method="get">
+                <p class="form-row">
+                    <label for="history-equipment">Equipment</label>
+                    <select id="history-equipment" name="equipment">
+                        <option value="">All Equipment</option>
+                        <option value="EQ03">Oscilloscope C</option>
+                        <option value="EQ04">Digital Multimeter Set</option>
+                        <option value="EQ05">Spectrophotometer E</option>
+                        <option value="EQ06">3D Printer D</option>
+                    </select>
+                </p>
+                <p class="form-row">
+                    <label for="outcome">Outcome</label>
+                    <select id="outcome" name="outcome">
+                        <option value="">Any Outcome</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="missed">Missed</option>
+                    </select>
+                </p>
+                <p class="form-row">
+                    <label for="from-date">From</label>
+                    <input type="date" id="from-date" name="from">
+                </p>
+                <p class="form-row">
+                    <label for="to-date">To</label>
+                    <input type="date" id="to-date" name="to">
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Show History">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Past Bookings</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Equipment</th>
+                        <th>Lab</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <tr>
+                        <td>BK090</td>
+                        <td>Oscilloscope C</td>
+                        <td>Electronics Lab</td>
+                        <td>2026-09-15</td>
+                        <td>10:00 - 12:00</td>
+                        <td class="status-cell status-good">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>BK085</td>
+                        <td>Digital Multimeter Set</td>
+                        <td>Electronics Lab</td>
+                        <td>2026-09-10</td>
+                        <td>14:00 - 15:00</td>
+                        <td class="status-cell status-muted">Cancelled</td>
+                    </tr>
+                    <tr>
+                        <td>BK080</td>
+                        <td>Spectrophotometer E</td>
+                        <td>Chemistry Lab</td>
+                        <td>2026-09-02</td>
+                        <td>11:00 - 13:00</td>
+                        <td class="status-cell status-bad">Missed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section list-section">
+            <h2>Summary</h2>
+            <ul class="info-list">
+                <li id="sum-total">Total bookings: 3</li>
+                <li id="sum-completed">Completed: 1</li>
+                <li id="sum-cancelled">Cancelled: 1</li>
+                <li id="sum-missed">Missed: 1</li>
+            </ul>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="my-bookings.html">My Bookings</a> - See your upcoming and pending requests</li>
+                <li><a href="book.html">Book Equipment</a> - Make a new booking</li>
+                <li><a href="equipment.html">Equipment</a> - Browse the equipment catalogue</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="history.js"></script>
+</body>
+</html>

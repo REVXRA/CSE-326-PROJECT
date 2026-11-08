@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approvals | LabBook</title>
+    <link rel="stylesheet" href="approvals.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html" aria-current="page">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Approvals</h1>
+            <p>Faculty and lab in-charges review booking requests here and approve or reject them with remarks.</p>
+            <p>This page is for staff only. Please <a href="login.html">log in</a> as Faculty or Lab Instructor / Technician to continue.</p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Pending Requests</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Student</th>
+                        <th>Registration ID</th>
+                        <th>Equipment</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody id="pending-body">
+                    <tr>
+                        <td>REQ201</td>
+                        <td>Student A</td>
+                        <td>REG001</td>
+                        <td>Spectrophotometer E</td>
+                        <td>2026-10-07</td>
+                        <td>14:00 - 16:00</td>
+                        <td>Sample analysis for project</td>
+                    </tr>
+                    <tr>
+                        <td>REQ202</td>
+                        <td>Student B</td>
+                        <td>REG002</td>
+                        <td>Oscilloscope C</td>
+                        <td>2026-10-08</td>
+                        <td>10:00 - 12:00</td>
+                        <td>Circuit experiment</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Give a Decision</h2>
+            <form class="form" id="decision-form" action="#" method="post">
+                <p class="form-row">
+                    <label for="request-id">Request ID</label>
+                    <select id="request-id" name="request" required>
+                        <option value="">Select request</option>
+                        <option value="REQ201">REQ201</option>
+                        <option value="REQ202">REQ202</option>
+                    </select>
+                </p>
+                <fieldset class="form-group">
+                    <legend>Decision</legend>
+                    <p class="form-row">
+                        <input type="radio" id="approve" name="decision" value="approve" required>
+                        <label for="approve">Approve</label>
+                    </p>
+                    <p class="form-row">
+                        <input type="radio" id="reject" name="decision" value="reject" required>
+                        <label for="reject">Reject</label>
+                    </p>
+                </fieldset>
+                <p class="form-row">
+                    <label for="remarks">Remarks</label>
+                    <textarea id="remarks" name="remarks" rows="3" cols="40"></textarea>
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Submit Decision">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="notifications.html">Notifications</a> - Students are alerted after every decision</li>
+                <li><a href="maintenance.html">Maintenance</a> - Block equipment that needs repair or calibration</li>
+                <li><a href="admin.html">Admin</a> - Open the admin dashboard</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="approvals.js"></script>
+</body>
+</html>

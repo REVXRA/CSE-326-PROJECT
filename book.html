@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Equipment | LabBook</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html" aria-current="page">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Book Equipment</h1>
+            <p>Fill in the form below to request a slot. Please check the <a href="availability.html">availability page</a> first. Your request goes to your supervisor for approval.</p>
+            <p>You must be <a href="login.html">logged in</a> to send a request.</p>
+        </section>
+
+        <section class="content-section form-section">
+            <h2>Booking Request Form</h2>
+            <form class="form" id="booking-form" action="#" method="post">
+                <fieldset class="form-group">
+                    <legend>Your Details</legend>
+                    <p class="form-row">
+                        <label for="reg-no">Registration ID</label>
+                        <input type="text" id="reg-no" name="UID" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="supervisor">Supervisor / Faculty Name</label>
+                        <input type="text" id="supervisor" name="supervisor" required>
+                    </p>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Equipment and Time</legend>
+                    <p class="form-row">
+                        <label for="equipment">Equipment</label>
+                        <select id="equipment" name="equipment" required>
+                            <option value="">Select equipment</option>
+                            <option value="EQ03">Oscilloscope C</option>
+                            <option value="EQ04">Digital Multimeter Set</option>
+                            <option value="EQ05">Spectrophotometer E</option>
+                            <option value="EQ06">3D Printer D</option>
+                        </select>
+                    </p>
+                    <p class="form-row">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="start-time">Start Time</label>
+                        <input type="time" id="start-time" name="start" required>
+                    </p>
+                    <p class="form-row">
+                        <label for="end-time">End Time</label>
+                        <input type="time" id="end-time" name="end" required>
+                    </p>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Purpose</legend>
+                    <p class="form-row">
+                        <label for="purpose">Why do you need this equipment?</label>
+                        <textarea id="purpose" name="purpose" rows="4" cols="40" required></textarea>
+                    </p>
+                </fieldset>
+                <p class="form-row">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I will use the equipment carefully and follow lab rules</label>
+                </p>
+                <p class="form-actions">
+                    <input type="submit" value="Send Request">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+            <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="content-section list-section" id="conflict-rules">
+            <h2>Conflict Rules</h2>
+            <p>The system checks every request before it is sent:</p>
+            <ul class="info-list">
+                <li>The time slot must not overlap with another approved or pending booking.</li>
+                <li>Equipment under maintenance cannot be booked.</li>
+                <li>The start time must be earlier than the end time.</li>
+                <li>The date must be today or a future date.</li>
+                <li>Every request needs approval from the supervisor or lab in-charge.</li>
+            </ul>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="availability.html">Availability</a> - Check free slots before sending a request</li>
+                <li><a href="my-bookings.html">My Bookings</a> - Track the status of your request after sending it</li>
+                <li><a href="equipment.html">Equipment</a> - Go back to the equipment catalogue</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="book.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance | LabBook</title>
+    <link rel="stylesheet" href="maintenance.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" id="top">
+        <div class="site-brand">
+            <a class="site-name" href="index.html">LabBook</a>
+            <p class="site-tagline">Digital Lab Equipment Booking</p>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="history.html">Usage History</a></li>
+                <li><a href="approvals.html">Approvals</a></li>
+                <li><a href="maintenance.html" aria-current="page">Maintenance</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <h1>Maintenance</h1>
+            <p>Welcome to the Maintenance page! Here you can find information about the maintenance of lab equipment.</p>
+            <p>If you are a lab instructor or technician, please <a href="login.html">log in</a> to access maintenance tools and reports. Equipment under maintenance is shown as unavailable on the availability page: <a href="availability.html">Check Availability</a>.</p>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Equipment Under Maintenance</h2>
+            <p id="maintenance-summary" role="status"></p>
+            <p>The following equipment is currently under maintenance and unavailable for booking:</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Equipment Name</th>
+                        <th>Lab</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Maintenance Start Date</th>
+                        <th>Maintenance End Date</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Microscope A</td>
+                        <td>Biology Lab</td>
+                        <td>Optical Instruments</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td>2023-10-01</td>
+                        <td>2023-10-20</td>
+                        <td>Calibration required</td>
+                    </tr>
+                    <tr>
+                        <td>Centrifuge B</td>
+                        <td>Chemistry Lab</td>
+                        <td>Laboratory Equipment</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td>2023-10-01</td>
+                        <td>2023-10-15</td>
+                        <td>Repair needed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section table-section">
+            <h2>Maintenance Schedule</h2>
+            <p>Here is the maintenance schedule for upcoming maintenance activities:</p>
+            <p><button type="button" id="toggle-schedule">Hide Schedule</button></p>
+            <table class="data-table" id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Equipment Name</th>
+                        <th>Lab</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Maintenance Start Date</th>
+                        <th>Maintenance End Date</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Microscope A</td>
+                        <td>Biology Lab</td>
+                        <td>Optical Instruments</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td>2023-10-01</td>
+                        <td>2023-10-20</td>
+                        <td>Calibration required</td>
+                    </tr>
+                    <tr>
+                        <td>Centrifuge B</td>
+                        <td>Chemistry Lab</td>
+                        <td>Laboratory Equipment</td>
+                        <td class="status-cell status-blocked">Under Maintenance</td>
+                        <td>2023-10-01</td>
+                        <td>2023-10-15</td>
+                        <td>Repair needed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="related-section">
+            <h2>Related Pages</h2>
+            <ul class="link-list">
+                <li><a href="availability.html">Availability</a> - See which equipment is blocked or free</li>
+                <li><a href="equipment.html">Equipment</a> - Browse the equipment catalogue</li>
+                <li><a href="notifications.html">Notifications</a> - Read maintenance alerts</li>
+                <li><a href="login.html">Login</a> - Staff login for maintenance tools</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="book.html">Book Equipment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <p class="back-to-top"><a href="#top">Go to top</a></p>
+        <p class="copyright">&copy; 2026 LabBook - Digital Lab Equipment Booking Project</p>
+    </footer>
+    <script src="maintenance.js"></script>
+</body>
+</html>
